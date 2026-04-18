@@ -1,3 +1,7 @@
+import 'package:Zynlo/Views/CallScreen/call_screen.dart';
+import 'package:Zynlo/Views/CommunitiesScreen/communities_screen.dart';
+import 'package:Zynlo/Views/UpdateScreen/update_screen.dart';
+import 'package:Zynlo/Views/YouScreen/you_screen.dart';
 import 'package:get/get.dart';
 import '../Models/chat_models.dart';
 
@@ -82,7 +86,30 @@ class ChatController extends GetxController {
     chatList.refresh();
   }
 
+
   void changeTab(int index) {
     currentIndex.value = index;
+
+    switch (index) {
+      case 0:
+        break;
+
+      case 1:
+        Get.to(() => UpdateScreen());
+        break;
+
+      case 2:
+        Get.to(() => CommunitiesScreen());
+        break;
+
+      case 3:
+        Get.to(() => CallScreen());
+        break;
+
+      case 4:
+        Get.to(() => YouScreen());
+        break;
+    }
   }
+
 }
